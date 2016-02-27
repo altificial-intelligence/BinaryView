@@ -1,5 +1,6 @@
 from googleapiclient.discovery import build
 
+
 class ImageSearch:
 
     def __init__(self):
@@ -8,6 +9,7 @@ class ImageSearch:
         self.service = build("customsearch", "v1",
                              developerKey=self.apiKey)
 
+    # get images based on a query,
     def getImages(self, query, numImages):
         return self.service.cse().list(
                 q=query,
@@ -28,11 +30,9 @@ class ImageSearch:
                 print('{}:\n\t{}'.format(item['title'], item['link']))
 
 
-
 def main():
     imgS = ImageSearch()
     imgS.parseImages(imgS.getImages('donald trump', 2))
-
 
 
 if __name__ == '__main__':

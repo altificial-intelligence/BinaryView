@@ -19,3 +19,6 @@ https://github.com/google/google-api-python-client/blob/master/samples/customsea
 
 cse list
 https://developers.google.com/custom-search/json-api/v1/reference/cse/list
+
+python objects
+https://github.com/adaptives/python-examples/blob/master/basic_examples/python_objects.py
