@@ -1,30 +1,39 @@
 from googleapiclient.discovery import build
-import pprint
+
+class ImageSearch:
+
+    def __init__(self):
+        self.apiKey = "AIzaSyBfKuONYZkZ56UqyZ45OYK9exNAI8FBapc"
+        self.searchEngineId = '006736731268319443987:hdhdfnrz2om'
+        self.service = build("customsearch", "v1",
+                             developerKey=self.apiKey)
+
+    def getImages(self, query, numImages):
+        return self.service.cse().list(
+                q=query,
+                cx=self.searchEngineId,
+                safe='high',
+                searchType='image',
+                imgSize='medium',
+                imgType='face',
+                dateRestrict='y[2]',
+                num=numImages
+        ).execute()
+
+    def parseImages(self, response):
+        if not 'items' in response:
+            print 'No result !!\nres is: {}'.format(response)
+        else:
+            for item in response['items']:
+                print('{}:\n\t{}'.format(item['title'], item['link']))
 
 
 
 def main():
-    service = build("customsearch", "v1",
-              developerKey="AIzaSyBfKuONYZkZ56UqyZ45OYK9exNAI8FBapc")
+    imgS = ImageSearch()
+    imgS.parseImages(imgS.getImages('donald trump', 2))
 
-    res = service.cse().list(
-        q='donald trump',
-        cx='006736731268319443987:hdhdfnrz2om',
-        safe='high',
-        searchType='image',
-        imgSize='medium',
-        imgType='face',
-        dateRestrict='y[2]',
-        num=3
-    ).execute()
 
-    #pprint.pprint(res)
-
-    if not 'items' in res:
-        print 'No result !!\nres is: {}'.format(res)
-    else:
-        for item in res['items']:
-            print('{}:\n\t{}'.format(item['title'], item['link']))
 
 if __name__ == '__main__':
     main()
