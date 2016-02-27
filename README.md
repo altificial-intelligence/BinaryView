@@ -1,7 +1,6 @@
 # politics
 Politics
 
-
 ## Admin
 Google Developers Console
 https://console.developers.google.com/apis/api/customsearch/overview?project=politics-1234

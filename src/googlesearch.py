@@ -1,4 +1,5 @@
 from googleapiclient.discovery import build
+import argparse
 
 
 class ImageSearch:
@@ -9,30 +10,58 @@ class ImageSearch:
         self.service = build("customsearch", "v1",
                              developerKey=self.apiKey)
 
-    # get images based on a query,
-    def getImages(self, query, numImages):
+    def getImages(self, query, numImages, imgType, dateRange):
         return self.service.cse().list(
                 q=query,
                 cx=self.searchEngineId,
                 safe='high',
                 searchType='image',
                 imgSize='medium',
-                imgType='face',
-                dateRestrict='y[2]',
+                imgType=imgType,
+                dateRestrict=dateRange,
                 num=numImages
         ).execute()
 
     def parseImages(self, response):
+        urls = []
         if not 'items' in response:
             print 'No result !!\nres is: {}'.format(response)
         else:
             for item in response['items']:
-                print('{}:\n\t{}'.format(item['title'], item['link']))
+                urls.append(item['link'])
+        return urls
 
+    def saveFile(self, fileName, urls):
+        file = open(fileName, "w")
+        for url in urls:
+            file.write(url + "\n")
+        file.close()
+
+    def saveLinks(self, query, numLinks, imgType, dateRange, fileName):
+        self.saveFile(fileName, self.parseImages(self.getImages(query, numLinks, imgType, dateRange)))
+
+
+def parseCommands():
+    parser = argparse.ArgumentParser(prog='Image Search.')
+    subparsers = parser.add_subparsers(dest='getUrls', help='Get URLs of images based on query.')
+    parser_query = subparsers.add_parser('saveUrls', help='Save URLs to text file.')
+    parser_query.add_argument('query', help='The query.')
+    parser_query.add_argument('numLinks', help='Number of URLs.')
+    parser_query.add_argument('imgType', help='The image type.')
+    parser_query.add_argument('dateRange', help='The date range.')
+    parser_query.add_argument('fileName', help='The text file name.')
+    parser_query.set_defaults(getUrls=getUrlsByQuery)
+    args = parser.parse_args()
+    args.getUrls(args)
+
+def getUrlsByQuery(args):
+    imgS = ImageSearch()
+    imgS.saveLinks(args.query, args.numLinks, args.imgType, args.dateRange, args.fileName)
 
 def main():
-    imgS = ImageSearch()
-    imgS.parseImages(imgS.getImages('donald trump', 2))
+    #imgS = ImageSearch()
+    #imgS.saveLinks('donald glover', 10, 'face', 'y[2]', 'out/donaldglover.txt')
+    parseCommands()
 
 
 if __name__ == '__main__':

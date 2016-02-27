@@ -11,7 +11,9 @@ class Classify:
 
 def main():
     c = Classify()
-    res = c.classify('http://a3.files.biography.com/image/upload/c_fill,cs_srgb,dpr_1.0,g_face,h_300,q_80,w_300/MTE5NDg0MDU1MTUyNzIzNDcx.jpg')
+    fileName = 'https://usatelections.files.wordpress.com/2015/06/xxx_a13_trump_2000_24.jpg?w=198&h=300'
+    fileName2 = 'http://politicks.org/IMAGES/CANDIDATES/2016/PRESIDENT/Donald-Trump.gif'
+    res = c.classify(fileName2)
     print res
 
 if __name__ == '__main__':
