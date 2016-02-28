@@ -10,6 +10,16 @@ class ImageSearch:
                              developerKey=self.apiKey)
 
     def getImages(self, query, numImages, imgType, dateRange):
+
+        # ensure number of images is between 1,10 inclusive for google custom search api
+        numImagesLimit = 1
+        if numImages > 10:
+            numImagesLimit = 10
+        elif numImages <= 0:
+            numImagesLimit = 1
+        else:
+            numImagesLimit = numImages
+
         return self.service.cse().list(
                 q=query,
                 cx=self.searchEngineId,
@@ -18,7 +28,7 @@ class ImageSearch:
                 imgSize='medium',
                 imgType=imgType,
                 dateRestrict=dateRange,
-                num=numImages
+                num=numImagesLimit
         ).execute()
 
     def parseImages(self, response):

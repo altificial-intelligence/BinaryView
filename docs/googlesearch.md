@@ -19,6 +19,7 @@ https://github.com/google/google-api-python-client/blob/master/samples/customsea
 
 cse list
 https://developers.google.com/custom-search/json-api/v1/reference/cse/list
+number of images is limited from 1-10 inclusive
 
 python objects
 https://github.com/adaptives/python-examples/blob/master/basic_examples/python_objects.py

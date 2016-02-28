@@ -19,7 +19,7 @@ word clouds of tagged politician images using Clarifai by political candidate
 3. Generate Data Viz
   !- for each candidate, generate a text file of words
   !- for each word, print the word n times where n is count, save to text file
-  - generate wordcloud / data visualization
+  !- generate wordcloud / data visualization
 
 
 4. Web app to dynamically generate data viz
@@ -35,5 +35,5 @@ word clouds of tagged politician images using Clarifai by political candidate
   !- write up, submit by 11am, start at 10:45am
 
 
-6. Model
+After. Model
     - is the image really of the person?
