@@ -1,16 +1,27 @@
 from flask import (
     Flask,
     render_template,
-    redirect
+    redirect,
+    request
 )
 #import os
 #import wordCounts as wc
 
 app = Flask(__name__)
 
-@app.route("/", method='GET'):
+@app.route("/")
+def main():
+    return redirect('/index')
+
+@app.route("/index")
 def index():
     return render_template('index.html')
+
+@app.route('/test', methods = ['POST'])
+def test():
+    data = request.form['test']
+    print("test data is " + data)
+    return redirect('/')
 
 """
 def hello_world():
