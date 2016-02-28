@@ -4,10 +4,11 @@ Politics
 ## Usage
 ### Google Search
 ```
-python src/googlesearch.py saveUrls 'bernie sanders' 5 'face' 'y[1]' 'out/berniesanders.txt'
+time python src/googlesearch.py saveUrls 'bernie sanders' 5 'face' 'y[1]' 'out/urls/berniesanders'
 ```
 ### Clarifai Classification
 ```
+time python src/clarifai.py classify 'out/urls/' 'out/counts/'
 ```
 
 ## Admin

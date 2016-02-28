@@ -15,3 +15,5 @@ be sure to export as strings! added to bashrc file
 
 http://www.pythonforbeginners.com/files/reading-and-writing-files-in-python
 
+read in all text files from directory
+http://stackoverflow.com/questions/3964681/find-all-files-in-directory-with-extension-txt-in-python

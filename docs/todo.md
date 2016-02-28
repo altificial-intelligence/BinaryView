@@ -11,9 +11,9 @@ word clouds of tagged politician images using Clarifai by political candidate
 
 2. Candidate Classifier
   !- classify candidate images using Clarifai API
-  - parse classifications
-  - data structure: dictionary of dictionaries, key = candidateName, value = dictionary { key = word, value = count }
-  - then output each candidate's dictionary to a text file of words
+  !- parse classifications
+  !- data structure: dictionary of dictionaries, key = candidateName, value = dictionary { key = word, value = count }
+  !- then output each candidate's dictionary to a text file of words
 
 
 3. Generate Wordclouds [http://www.wordle.net/]
