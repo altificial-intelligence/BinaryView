@@ -17,12 +17,14 @@ word clouds of tagged politician images using Clarifai by political candidate
 
 
 3. Generate Wordclouds [http://www.wordle.net/]
-  - for each candidate, generate a text file of words
-  - for each word, print the word n times where n is count, save to text file
+  !- for each candidate, generate a text file of words
+  !- for each word, print the word n times where n is count, save to text file
+  - generate wordcloud
 
 
 4. Present Results
   - simple website, choose a candidate (dropdown), see that wordcloud image file
+  - use wolfram alpha to also display info about candidate, https://www.wolframalpha.com/examples/PoliticalLeaders.html
 
 5. Devpost
--
+  - write up, submit by 9am
