@@ -17,12 +17,21 @@ class Classify:
             print 'Error classifying using Clarifai API'
             return []
         else:
-            return response['results'][0]['result']['tag']['classes']
+            classes = response['results'][0]['result']['tag']['classes']
+            # if type is gif, get the nested classes
+            if any(isinstance(i, list) for i in classes):
+                allClasses = []
+                for sublist in classes:
+                    for item in sublist:
+                        allClasses.append(item)
+                return allClasses
+            else:
+                return classes
 
     def classifyUrls(self, urls):
         for url in urls:
             classes = self.parseClassification(self.classify(url))
-            print classes
+            #print classes
             for className in classes:
                 if className not in self.wordsToCounts:
                     self.wordsToCounts[className] = 1

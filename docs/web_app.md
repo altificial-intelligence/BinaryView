@@ -19,6 +19,12 @@ https://realpython.com/blog/python/flask-by-example-part-1-project-setup/
 debug errors with flask
 http://stackoverflow.com/questions/10219486/flask-post-request-is-causing-server-to-crash
 
+list of lists
+http://stackoverflow.com/questions/24180879/python-check-if-a-list-is-nested-or-not
+
+heroku config
+https://devcenter.heroku.com/articles/config-vars#setting-up-config-vars-for-a-deployed-application
+
 - wordcloud
 https://github.com/atizo/PyTagCloud
 https://github.com/jasondavies/d3-cloud
