@@ -17,3 +17,6 @@ http://www.pythonforbeginners.com/files/reading-and-writing-files-in-python
 
 read in all text files from directory
 http://stackoverflow.com/questions/3964681/find-all-files-in-directory-with-extension-txt-in-python
+
+when bad return status, how to handle?
+http://stackoverflow.com/questions/19371358/python-typeerror-unhashable-type-list

@@ -5,8 +5,8 @@ from flask import (
     request
 )
 
-import googleSearch
 import clarifaiClassify
+from src import googleSearch
 
 app = Flask(__name__)
 
@@ -36,4 +36,5 @@ def classify():
     return render_template('classify.html', image=firstImage, data=words)
 
 if __name__ == '__main__':
+    app.debug = True
     app.run()

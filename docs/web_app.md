@@ -16,6 +16,9 @@ http://stackoverflow.com/questions/21942320/calling-a-local-python-script-from-j
 http://code.runnable.com/UhLMQLffO1YSAADK/handle-a-post-request-in-flask-for-python
 https://realpython.com/blog/python/flask-by-example-part-1-project-setup/
 
+debug errors with flask
+http://stackoverflow.com/questions/10219486/flask-post-request-is-causing-server-to-crash
+
 - wordcloud
 https://github.com/atizo/PyTagCloud
 https://github.com/jasondavies/d3-cloud

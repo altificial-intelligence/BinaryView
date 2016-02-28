@@ -15,13 +15,14 @@ class Classify:
         status = response['status_code']
         if status != "OK":
             print 'Error classifying using Clarifai API'
-            return ""
+            return []
         else:
             return response['results'][0]['result']['tag']['classes']
 
     def classifyUrls(self, urls):
         for url in urls:
             classes = self.parseClassification(self.classify(url))
+            print classes
             for className in classes:
                 if className not in self.wordsToCounts:
                     self.wordsToCounts[className] = 1
