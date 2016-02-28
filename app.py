@@ -17,11 +17,11 @@ def main():
 def index():
     return render_template('index.html')
 
-@app.route('/test', methods = ['POST'])
+@app.route('/classify', methods = ['POST'])
 def test():
     data = request.form['test']
-    print("test data is " + data)
-    return redirect('/')
+    #print("test data is " + data)
+    return render_template('classify.html', test=data)
 
 """
 def hello_world():
