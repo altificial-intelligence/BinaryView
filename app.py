@@ -29,6 +29,10 @@ def classify():
 
     return render_template('classify.html', person=query, image=firstImage, data=jsonWords)
 
+@app.route("/skeleton")
+def skeleton():
+    return render_template('skeleton.html')
+
 if __name__ == '__main__':
     app.debug = True
     app.run()
