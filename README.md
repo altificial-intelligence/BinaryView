@@ -2,6 +2,12 @@
 Politics
 
 ## Usage
+### Heroku
+```
+git commit heroku master
+heroku open
+```
+
 ### Google Search
 ```
 time python src/googlesearch.py saveUrls 'bernie sanders' 5 'face' 'y[1]' 'out/urls/berniesanders'
