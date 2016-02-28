@@ -25,14 +25,6 @@ def classify():
     firstImage = urls[0]
     words = clarifaiClassify.classifyUrls(urls)
 
-    """
-    words = wc.classifyImages('bernie sanders', 10, 'face', 'y[1]')
-    output = str()
-    for word in words:
-        output += word + " "
-    print words
-    """
-
     return render_template('classify.html', image=firstImage, data=words)
 
 if __name__ == '__main__':

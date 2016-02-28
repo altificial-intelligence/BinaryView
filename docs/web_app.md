@@ -25,6 +25,12 @@ http://stackoverflow.com/questions/24180879/python-check-if-a-list-is-nested-or-
 heroku config
 https://devcenter.heroku.com/articles/config-vars#setting-up-config-vars-for-a-deployed-application
 
+load static js
+http://stackoverflow.com/questions/14711552/external-javascript-file-is-not-getting-added-when-runs-on-flask
+
+d3 wordcloud
+https://github.com/shprink/d3js-wordcloud
+
 - wordcloud
 https://github.com/atizo/PyTagCloud
 https://github.com/jasondavies/d3-cloud

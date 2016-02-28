@@ -25,7 +25,7 @@ word clouds of tagged politician images using Clarifai by political candidate
 4. Web app to dynamically generate data viz
   !- hello world flask on heroku
   !- make sure response from classify clarifai was OK, ensure classes is just a list, not nested! (try other)
-  - set clarifai environment variables in heroku
+  !- set clarifai environment variables in heroku
   - generate wordcloud from words, start by logging to console the words in JS
   - spice up with stylesheets
 
