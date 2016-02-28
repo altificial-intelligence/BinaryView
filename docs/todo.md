@@ -26,9 +26,14 @@ word clouds of tagged politician images using Clarifai by political candidate
   !- hello world flask on heroku
   !- make sure response from classify clarifai was OK, ensure classes is just a list, not nested! (try other)
   !- set clarifai environment variables in heroku
-  - generate wordcloud from words, start by logging to console the words in JS
+  !- generate wordcloud from words, start by logging to console the words in JS
   - spice up with stylesheets
+  - does first image not display because of hotlinking?
 
 
 5. Devpost
-  - write up, submit by 11am, start at 10:45am
+  !- write up, submit by 11am, start at 10:45am
+
+
+6. Model
+    - is the image really of the person?

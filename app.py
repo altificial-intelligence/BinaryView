@@ -21,6 +21,7 @@ def query():
 @app.route('/classify', methods = ['POST'])
 def classify():
     query = request.form['query']
+    # numberImages = request.form['numImages']
     urls = googleSearch.getUrls(query, 10, 'face', 'y[2]')
     firstImage = urls[0]
     words = clarifaiClassify.classifyUrls(urls)

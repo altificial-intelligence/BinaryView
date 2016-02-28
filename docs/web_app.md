@@ -37,6 +37,9 @@ https://codedump.io/share/2Ds5gAgHkjn/1/how-to-correctly-use-flask39s-jsonify-to
 http://stackoverflow.com/questions/11178426/how-can-i-pass-data-from-flask-to-javascript-in-a-template
 http://stackoverflow.com/questions/25747184/python-how-to-export-json-in-js
 
+image hotlinking?
+http://altlab.com/hotlinkchecker.php
+
 - wordcloud
 https://github.com/atizo/PyTagCloud
 https://github.com/jasondavies/d3-cloud

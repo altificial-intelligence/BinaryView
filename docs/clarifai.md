@@ -20,3 +20,11 @@ http://stackoverflow.com/questions/3964681/find-all-files-in-directory-with-exte
 
 when bad return status, how to handle?
 http://stackoverflow.com/questions/19371358/python-typeerror-unhashable-type-list
+
+bad response
+http://stackoverflow.com/questions/23177439/python-checking-if-a-dictionary-is-empty-doesnt-seem-to-work
+https://developer.clarifai.com/docstag
+https://docs.python.org/2/tutorial/errors.html
+
+handling
+http://stackoverflow.com/questions/6817640/catch-any-error-in-python
