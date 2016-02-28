@@ -14,3 +14,4 @@ export CLARIFAI_APP_SECRET=<an_application_secret_from_your_account>
 be sure to export as strings! added to bashrc file
 
 http://www.pythonforbeginners.com/files/reading-and-writing-files-in-python
+

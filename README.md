@@ -1,6 +1,15 @@
 # politics
 Politics
 
+## Usage
+### Google Search
+```
+python src/googlesearch.py saveUrls 'bernie sanders' 5 'face' 'y[1]' 'out/berniesanders.txt'
+```
+### Clarifai Classification
+```
+```
+
 ## Admin
 Google Developers Console
 https://console.developers.google.com/apis/api/customsearch/overview?project=politics-1234

@@ -59,8 +59,6 @@ def getUrlsByQuery(args):
     imgS.saveLinks(args.query, args.numLinks, args.imgType, args.dateRange, args.fileName)
 
 def main():
-    #imgS = ImageSearch()
-    #imgS.saveLinks('donald glover', 10, 'face', 'y[2]', 'out/donaldglover.txt')
     parseCommands()
 
 
