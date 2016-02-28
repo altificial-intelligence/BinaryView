@@ -1,11 +1,8 @@
 import googlesearch as gs
 import clarifaiClassify as cl
 
-def main():
-    urls = gs.getUrls('bernie sanders', 10, 'face', 'y[1]')
+def classifyImages(query, numImgs, imgType, dateRange):
+    urls = gs.getUrls(query, numImgs, imgType, dateRange)
     words = cl.classifyUrls(urls)
-    print words
-
-if __name__ == '__main__':
-    main()
+    return words
 
