@@ -1,7 +1,6 @@
 from flask import (
     Flask,
     render_template,
-    request,
     redirect
 )
 #import os
@@ -9,11 +8,7 @@ from flask import (
 
 app = Flask(__name__)
 
-@app.route("/")
-def main():
-    return redirect('/index')
-
-@app.route("/index")
+@app.route("/", method='GET'):
 def index():
     return render_template('index.html')
 
