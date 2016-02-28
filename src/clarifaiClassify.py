@@ -42,8 +42,10 @@ class Classify:
         words = []
         for word in self.wordsToCounts:
             count = self.wordsToCounts[word]
-            for x in range(0, count):
-                words.append(word)
+            wordDict = {}
+            wordDict["key"] = str(word)
+            wordDict["value"] = count
+            words.append(wordDict)
         return words
 
 

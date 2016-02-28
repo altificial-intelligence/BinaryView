@@ -4,9 +4,9 @@ from flask import (
     redirect,
     request
 )
+import json
 
-import clarifaiClassify
-from src import googleSearch
+from src import googleSearch, clarifaiClassify
 
 app = Flask(__name__)
 
@@ -24,8 +24,9 @@ def classify():
     urls = googleSearch.getUrls(query, 10, 'face', 'y[2]')
     firstImage = urls[0]
     words = clarifaiClassify.classifyUrls(urls)
+    jsonWords = json.dumps(words)
 
-    return render_template('classify.html', image=firstImage, data=words)
+    return render_template('classify.html', person=query, image=firstImage, data=jsonWords)
 
 if __name__ == '__main__':
     app.debug = True

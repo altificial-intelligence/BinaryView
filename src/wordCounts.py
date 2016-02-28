@@ -1,4 +1,4 @@
-import clarifaiClassify as cl
+import src.clarifaiClassify as cl
 from src import googleSearch as gs
 
 
