@@ -21,17 +21,13 @@ def query():
 @app.route('/classify', methods = ['POST'])
 def classify():
     query = request.form['query']
-    # numberImages = request.form['numImages']
-    urls = googleSearch.getUrls(query, 11, 'face', 'y[2]')
+    # max number of images can search is 10, for a face, within last three years
+    urls = googleSearch.getUrls(query, 10, 'face', 'y[3]')
     firstImage = urls[0]
     words = clarifaiClassify.classifyUrls(urls)
     jsonWords = json.dumps(words)
 
     return render_template('classify.html', person=query, image=firstImage, data=jsonWords)
-
-@app.route("/skeleton")
-def skeleton():
-    return render_template('skeleton.html')
 
 if __name__ == '__main__':
     app.debug = True

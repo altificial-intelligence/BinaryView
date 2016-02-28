@@ -1,27 +1,66 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>Classify</title>
-		<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">-->
-        <!--<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">-->
-        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
-        <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
-        <script type="text/javascript" src="{{ url_for('static', filename='js/d3.layout.cloud.js') }}"></script>
-	</head>
-	<body>
-        <div class="person">
-            <h1>{{ person }}</h1>
-        </div>
-        <div class="image">
-		    <img src='{{ image }}' alt="image" />
-        </div>
-        <div id="vis"></div>
-        <script>
-            var tags = {{ data|safe }};
-        </script>
-        <script type="text/javascript" src="{{ url_for('static', filename='js/word-cloud.js') }}"></script>
-	</body>
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>BinaryView</title>
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="../static/css/normalize.css">
+  <link rel="stylesheet" href="../static/css/skeleton.css">
+
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="../static/images/favicon.png">
+
+    <!-- JavaScript -->
+    <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/d3.layout.cloud.js') }}"></script>
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+      <h1>Binary View</h1>
+      <!-- the person and viz-->
+      <div class="row">
+          <div class="one-half">
+              <h2>{{ person }}</h2>
+              <img src='{{ image }}' alt='{{ person }}' />
+          </div>
+          <div class="one-half">
+              <!-- wordcloud div -->
+              <div id="vis"></div>
+          </div>
+      </div>
+      <!-- go back -->
+      <h3>
+          <a href="/query">Classify Another Person!</a>
+      </h3>
+
+      <!-- get the wordcloud tags -->
+      <script>
+          var tags = {{ data|safe }};
+      </script>
+      <!-- generate the wordcloud -->
+      <script type="text/javascript" src="{{ url_for('static', filename='js/word-cloud.js') }}"></script>
+  </div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
 </html>
