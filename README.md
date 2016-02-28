@@ -21,3 +21,6 @@ https://cse.google.com/cse/setup/basic?cx=006736731268319443987:hdhdfnrz2om
 Clarifai
 https://developer.clarifai.com/applications/14369/
 
+Heroku
+https://dashboard.heroku.com/apps/spartahack-politics/resources
+

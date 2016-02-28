@@ -16,6 +16,9 @@ class Classify:
         # dictionary of filenames to wordCount objects
         self.filesToWordcounts = {}
 
+    def reset(self):
+        self.filesToWordcounts = {}
+
     def classify(self, url):
         return self.clarifai.tag_image_urls(url)
 
@@ -81,6 +84,7 @@ def classifyUrlsByFile(args):
     c = Classify()
     c.readFiles(args.inputDir)
     c.saveWordCounts(args.outputDir)
+    c.reset()
 
 def main():
     parseCommands()
