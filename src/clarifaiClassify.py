@@ -2,22 +2,24 @@ from clarifai.client import ClarifaiApi
 import os
 import argparse
 
-
+"""
 class WordCount:
 
     def __init__(self):
         self.wordsToCounts = {}
+"""
 
 
 class Classify:
 
     def __init__(self):
         self.clarifai = ClarifaiApi() # assumes environment variables are set.
-        # dictionary of filenames to wordCount objects
-        self.filesToWordcounts = {}
+        self.wordsToCounts = {}
 
+    """
     def reset(self):
         self.filesToWordcounts = {}
+    """
 
     def classify(self, url):
         return self.clarifai.tag_image_urls(url)
@@ -26,6 +28,24 @@ class Classify:
     def parseClassification(self, response):
         return response['results'][0]['result']['tag']['classes']
 
+    def classifyUrls(self, urls):
+        for url in urls:
+            classes = self.parseClassification(self.classify(url))
+            for className in classes:
+                if className not in self.wordsToCounts:
+                    self.wordsToCounts[className] = 1
+                else:
+                    self.wordsToCounts[className] += 1
+
+    def countWords(self):
+        words = []
+        for word in self.wordsToCounts:
+            count = self.wordsToCounts[word]
+            for x in range(0, count):
+                words.append(word)
+        return words
+
+    """
     def getFiles(self, directory):
         files = []
         for file in os.listdir(directory):
@@ -68,12 +88,16 @@ class Classify:
                 for x in range(0, count):
                     fileWords.append(className)
             self.saveFile(directory + fileName, fileWords)
+    """
 
 
-def classify(urls):
+def classifyUrls(urls):
+    c = Classify()
+    c.classifyUrls(urls)
+    return c.countWords()
 
 
-
+"""
 def parseCommands():
     parser = argparse.ArgumentParser(prog='Classify AI.')
     subparsers = parser.add_subparsers(dest='classifyUrls', help='')
@@ -95,3 +119,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+"""
