@@ -1,5 +1,4 @@
 from googleapiclient.discovery import build
-import argparse
 
 
 class ImageSearch:
@@ -31,45 +30,7 @@ class ImageSearch:
                 urls.append(item['link'])
         return urls
 
-    """
-    def saveFile(self, fileName, urls):
-        file = open(fileName, "w")
-        for url in urls:
-            file.write(url + "\n")
-        file.close()
-
-    def saveLinks(self, query, numLinks, imgType, dateRange, fileName):
-        self.saveFile(fileName, self.parseImages(self.getImages(query, numLinks, imgType, dateRange)))
-    """
-
 
 def getUrls(query, numLinks, imgType, dateRange):
     imgS = ImageSearch()
     return imgS.parseImages(imgS.getImages(query, numLinks, imgType, dateRange))
-
-"""
-def parseCommands():
-    parser = argparse.ArgumentParser(prog='Image Search.')
-    subparsers = parser.add_subparsers(dest='getUrls', help='Get URLs of images based on query.')
-    parser_query = subparsers.add_parser('saveUrls', help='Save URLs to text file.')
-    parser_query.add_argument('query', help='The query.')
-    parser_query.add_argument('numLinks', help='Number of URLs.')
-    parser_query.add_argument('imgType', help='The image type.')
-    parser_query.add_argument('dateRange', help='The date range.')
-    parser_query.add_argument('fileName', help='The text file name.')
-    parser_query.set_defaults(getUrls=getUrlsByQuery)
-    args = parser.parse_args()
-    args.getUrls(args)
-
-def getUrlsByQuery(args):
-    imgS = ImageSearch()
-    imgS.saveLinks(args.query, args.numLinks, args.imgType, args.dateRange, args.fileName)
-
-
-def main():
-    parseCommands()
-
-
-if __name__ == '__main__':
-    main()
-"""

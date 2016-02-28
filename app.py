@@ -4,36 +4,32 @@ from flask import (
     redirect,
     request
 )
-#import os
 #import wordCounts as wc
 
 app = Flask(__name__)
 
 @app.route("/")
 def main():
-    return redirect('/index')
+    return redirect('/query')
 
-@app.route("/index")
+@app.route("/query")
 def index():
-    return render_template('index.html')
+    return render_template('query.html')
 
 @app.route('/classify', methods = ['POST'])
 def test():
     data = request.form['test']
-    #print("test data is " + data)
-    return render_template('classify.html', test=data)
 
-"""
-def hello_world():
+    """
     words = wc.classifyImages('bernie sanders', 10, 'face', 'y[1]')
     output = str()
     for word in words:
         output += word + " "
-    return output
-"""
+    print words
+    """
+
+    return render_template('classify.html', test=data)
+
 
 if __name__ == '__main__':
-    #app.run(port=33507)
     app.run()
-    #port = int(os.environ.get("PORT", 5000))
-    #app.run(host='0.0.0.0', port=port)

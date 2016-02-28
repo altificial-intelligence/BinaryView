@@ -14,6 +14,7 @@ have python script generate everything on fly, no text files
 http://stackoverflow.com/questions/21942320/calling-a-local-python-script-from-javascript
 
 http://code.runnable.com/UhLMQLffO1YSAADK/handle-a-post-request-in-flask-for-python
+https://realpython.com/blog/python/flask-by-example-part-1-project-setup/
 
 - wordcloud
 https://github.com/atizo/PyTagCloud
