@@ -24,8 +24,10 @@ word clouds of tagged politician images using Clarifai by political candidate
 
 4. Web app to dynamically generate data viz
   !- hello world flask on heroku
-  - simple website, enter two google queries that return two data viz (like word cloud) and compare side by side
-  - use wolfram alpha to also display info about the words?
+  - set clarifai environment variables in heroku
+  - make sure response from classify clarifai was OK
+  - generate wordcloud from words
+  - spice up with stylesheets
 
 
 5. Devpost

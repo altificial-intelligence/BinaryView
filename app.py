@@ -5,9 +5,8 @@ from flask import (
     request
 )
 
-import googlesearch
-
-#import wordCounts as wc
+import googleSearch
+import clarifaiClassify
 
 app = Flask(__name__)
 
@@ -22,8 +21,9 @@ def query():
 @app.route('/classify', methods = ['POST'])
 def classify():
     query = request.form['query']
-    urls = googlesearch.getUrls(query, 10, 'face', 'y[1]')
+    urls = googleSearch.getUrls(query, 10, 'face', 'y[2]')
     firstImage = urls[0]
+    words = clarifaiClassify.classifyUrls(urls)
 
     """
     words = wc.classifyImages('bernie sanders', 10, 'face', 'y[1]')
@@ -33,8 +33,7 @@ def classify():
     print words
     """
 
-    return render_template('classify.html', image=firstImage, test=urls)
-
+    return render_template('classify.html', image=firstImage, data=words)
 
 if __name__ == '__main__':
     app.run()

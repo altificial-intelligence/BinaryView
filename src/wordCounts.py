@@ -1,5 +1,5 @@
 import clarifaiClassify as cl
-import googlesearch as gs
+import googleSearch as gs
 
 
 def classifyImages(query, numImgs, imgType, dateRange):

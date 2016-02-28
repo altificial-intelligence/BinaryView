@@ -13,7 +13,7 @@ class ImageSearch:
         return self.service.cse().list(
                 q=query,
                 cx=self.searchEngineId,
-                safe='high',
+                safe='medium',
                 searchType='image',
                 imgSize='medium',
                 imgType=imgType,

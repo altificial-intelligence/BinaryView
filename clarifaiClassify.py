@@ -12,7 +12,12 @@ class Classify:
 
     # returns a list of classes
     def parseClassification(self, response):
-        return response['results'][0]['result']['tag']['classes']
+        status = response['status_code']
+        if status != "OK":
+            print 'Error classifying using Clarifai API'
+            return ""
+        else:
+            return response['results'][0]['result']['tag']['classes']
 
     def classifyUrls(self, urls):
         for url in urls:
