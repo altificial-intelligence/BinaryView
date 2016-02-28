@@ -22,9 +22,9 @@ word clouds of tagged politician images using Clarifai by political candidate
   - generate wordcloud / data visualization
 
 
-4. Present Results
-  - simple website, choose a candidate (dropdown), see that wordcloud image file
-  - use wolfram alpha to also display info about candidate, https://www.wolframalpha.com/examples/PoliticalLeaders.html
+4. Web app to dynamically generate data viz
+  - simple website, enter two google queries that return two data viz (like word cloud) and compare side by side
+  - use wolfram alpha to also display info about the words?
 
 
 5. Devpost

@@ -70,6 +70,10 @@ class Classify:
             self.saveFile(directory + fileName, fileWords)
 
 
+def classify(urls):
+
+
+
 def parseCommands():
     parser = argparse.ArgumentParser(prog='Classify AI.')
     subparsers = parser.add_subparsers(dest='classifyUrls', help='')

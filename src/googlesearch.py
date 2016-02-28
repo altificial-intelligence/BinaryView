@@ -31,6 +31,7 @@ class ImageSearch:
                 urls.append(item['link'])
         return urls
 
+    """
     def saveFile(self, fileName, urls):
         file = open(fileName, "w")
         for url in urls:
@@ -39,8 +40,14 @@ class ImageSearch:
 
     def saveLinks(self, query, numLinks, imgType, dateRange, fileName):
         self.saveFile(fileName, self.parseImages(self.getImages(query, numLinks, imgType, dateRange)))
+    """
 
 
+def getUrls(query, numLinks, imgType, dateRange):
+    imgS = ImageSearch()
+    return imgS.parseImages(imgS.getImages(query, numLinks, imgType, dateRange))
+
+"""
 def parseCommands():
     parser = argparse.ArgumentParser(prog='Image Search.')
     subparsers = parser.add_subparsers(dest='getUrls', help='Get URLs of images based on query.')
@@ -58,9 +65,11 @@ def getUrlsByQuery(args):
     imgS = ImageSearch()
     imgS.saveLinks(args.query, args.numLinks, args.imgType, args.dateRange, args.fileName)
 
+
 def main():
     parseCommands()
 
 
 if __name__ == '__main__':
     main()
+"""
