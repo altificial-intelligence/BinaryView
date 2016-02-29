@@ -44,7 +44,7 @@
               <h2>{{ person }}</h2>
           </div>
           <div class="six columns">
-              <img id="personaImg" src="{{ image }}" alt="{{ person }}" />
+              <img id="personaImg" src={{ image|safe }} alt="{{ person }}" />
           </div>
       </div>
 

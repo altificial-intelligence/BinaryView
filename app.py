@@ -27,10 +27,11 @@ def classify():
     # max number of images can search is 10, for a face, within last three years
     urls = googleSearch.getUrls(query, 10, 'face', 'y[3]')
     firstImage = urls[0]
+    jsonImage = json.dumps(firstImage)
     words = clarifaiClassify.classifyUrls(urls)
     jsonWords = json.dumps(words)
 
-    return render_template('classify.html', person=query, image=firstImage, data=jsonWords)
+    return render_template('classify.html', person=query, image=jsonImage, data=jsonWords)
 
 if __name__ == '__main__':
     app.debug = True
