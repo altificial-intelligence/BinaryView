@@ -21,6 +21,9 @@ def query():
 @app.route('/classify', methods = ['POST'])
 def classify():
     query = request.form['query']
+    # if query empty, search for beyonce
+    if not query:
+        query = "Beyonce"
     # max number of images can search is 10, for a face, within last three years
     urls = googleSearch.getUrls(query, 10, 'face', 'y[3]')
     firstImage = urls[0]

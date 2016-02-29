@@ -19,7 +19,7 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="../static/css/normalize.css">
   <link rel="stylesheet" href="../static/css/skeleton.css">
-
+  <link rel="stylesheet" href="../static/css/custom.css">
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -36,21 +36,32 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
       <h1>Binary View</h1>
+      <p>View the aggregated classifications and data visualization for the following persona.</p>
       <!-- the person and viz-->
       <div class="row">
-          <div class="one-half">
+          <div class="three columns">
               <h2>{{ person }}</h2>
-              <img src='{{ image }}' alt='{{ person }}' />
           </div>
-          <div class="one-half">
-              <!-- wordcloud div -->
+          <div class="nine columns">
+              <img id="personaImg" src='{{ image }}' alt='{{ person }}' />
+          </div>
+      </div>
+
+      <!-- wordcloud div -->
+      <div class="row">
+          <div class="twelve columns">
               <div id="vis"></div>
           </div>
       </div>
-      <!-- go back -->
-      <h3>
-          <a href="/query">Classify Another Person!</a>
-      </h3>
+
+      <div class="u-full-width">
+          <h4>Having fun? <a href="/query">Classify another Persona!</a></h4>
+      </div>
+
+      <!-- change the image size after loading -->
+      <script>
+        document.getElementById("personaImg").style.maxHeight = "7.5rem";
+      </script>
 
       <!-- get the wordcloud tags -->
       <script>

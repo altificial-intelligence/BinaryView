@@ -1,4 +1,6 @@
 http://devpost.com/software/altificial-intelligence
+Developed at spartahacks
+http://spartahack2016.devpost.com/
 
 
 # politics
