@@ -1,5 +1,50 @@
-/* person */
-.persona {
-    display: inline-block;
-    color: yellow;
+/* wordcloud initial */
+.wordcloudstyle {
+    margin: 0 auto;
+    width: 50.0rem;
+    height: 25.0rem;
+    position: relative;
+}
+
+/*
+@media (min-width: 300px) and (max-width: 399px) {
+    #wordcloud {
+        width: 30.0rem;
+    }
+}
+*/
+
+/* Larger than mobile */
+@media (min-width: 400px) {
+    #wordcloud {
+        width: 40.0rem;
+    }
+}
+
+/* Larger than phablet (also point when grid becomes active) */
+@media (min-width: 550px) {
+    #wordcloud {
+        width: 55.0rem;
+    }
+}
+
+/* Larger than tablet */
+@media (min-width: 750px) {
+    #wordcloud {
+        width: 75.0rem;
+    }
+}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {
+    #wordcloud {
+        width: 100.0rem;
+    }
+}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {
+    #wordcloud {
+        width: 120.0rem;
+    }
 }

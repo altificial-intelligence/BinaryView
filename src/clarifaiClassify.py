@@ -19,28 +19,22 @@ class Classify:
         # if good response
         if bool(response):
             status = response['status_code']
-            # do we need this?
-            if status != "OK":
-                print 'Error classifying using Clarifai API'
-                return []
+            classes = response['results'][0]['result']['tag']['classes']
+            # if type is gif, get the nested classes
+            if any(isinstance(i, list) for i in classes):
+                allClasses = []
+                for sublist in classes:
+                    for item in sublist:
+                        allClasses.append(item)
+                return allClasses
             else:
-                classes = response['results'][0]['result']['tag']['classes']
-                # if type is gif, get the nested classes
-                if any(isinstance(i, list) for i in classes):
-                    allClasses = []
-                    for sublist in classes:
-                        for item in sublist:
-                            allClasses.append(item)
-                    return allClasses
-                else:
-                    return classes
+                return classes
         else:
             return []
 
     def classifyUrls(self, urls):
         for url in urls:
             classes = self.parseClassification(self.classify(url))
-            #print classes
             for className in classes:
                 if className not in self.wordsToCounts:
                     self.wordsToCounts[className] = 1
@@ -52,8 +46,9 @@ class Classify:
         for word in self.wordsToCounts:
             count = self.wordsToCounts[word]
             wordDict = {}
-            wordDict["key"] = str(word)
-            wordDict["value"] = count
+            # expected by jqcloud
+            wordDict['text'] = str(word)
+            wordDict['weight'] = count
             words.append(wordDict)
         return words
 

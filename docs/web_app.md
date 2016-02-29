@@ -28,9 +28,6 @@ https://devcenter.heroku.com/articles/config-vars#setting-up-config-vars-for-a-d
 load static js
 http://stackoverflow.com/questions/14711552/external-javascript-file-is-not-getting-added-when-runs-on-flask
 
-d3 wordcloud
-https://github.com/shprink/d3js-wordcloud
-
 pass json to
 http://code.runnable.com/UiIDW0LvVMFPAAAM/how-to-return-json-from-flask-for-python
 https://codedump.io/share/2Ds5gAgHkjn/1/how-to-correctly-use-flask39s-jsonify-to-return-json
@@ -40,8 +37,6 @@ http://stackoverflow.com/questions/25747184/python-how-to-export-json-in-js
 image hotlinking?
 http://altlab.com/hotlinkchecker.php
 
-- wordcloud
-https://github.com/atizo/PyTagCloud
-https://github.com/jasondavies/d3-cloud
-https://github.com/amueller/word_cloud
+
+
 

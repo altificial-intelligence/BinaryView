@@ -20,14 +20,15 @@
   <link rel="stylesheet" href="../static/css/normalize.css">
   <link rel="stylesheet" href="../static/css/skeleton.css">
   <link rel="stylesheet" href="../static/css/custom.css">
+  <link rel="stylesheet" href="../static/bower_components/jqcloud2/dist/jqcloud.min.css">
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="../static/images/favicon.png">
 
     <!-- JavaScript -->
-    <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/d3.layout.cloud.js') }}"></script>
+    <script src="../static/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../static/bower_components/jqcloud2/dist/jqcloud.min.js"></script>
 
 </head>
 <body>
@@ -35,26 +36,24 @@
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
-      <h1>Binary View</h1>
+      <a href="/query" style="text-decoration: none;"><h1>Binary View</h1></a>
       <p>View the aggregated classifications and data visualization for the following persona.</p>
       <!-- the person and viz-->
       <div class="row">
-          <div class="three columns">
+          <div class="six columns">
               <h2>{{ person }}</h2>
           </div>
-          <div class="nine columns">
+          <div class="six columns">
               <img id="personaImg" src='{{ image }}' alt='{{ person }}' />
           </div>
       </div>
 
       <!-- wordcloud div -->
-      <div class="row">
-          <div class="twelve columns">
-              <div id="vis"></div>
-          </div>
-      </div>
+      <div id="wordcloud" class="wordcloudstyle jqcloud"></div>
 
       <div class="u-full-width">
+          <p></p>
+          <p></p>
           <h4>Having fun? <a href="/query">Classify another Persona!</a></h4>
       </div>
 
@@ -63,12 +62,23 @@
         document.getElementById("personaImg").style.maxHeight = "7.5rem";
       </script>
 
-      <!-- get the wordcloud tags -->
+      <!-- get the wordcloud words -->
       <script>
-          var tags = {{ data|safe }};
+          var words = {{ data|safe }};
       </script>
       <!-- generate the wordcloud -->
-      <script type="text/javascript" src="{{ url_for('static', filename='js/word-cloud.js') }}"></script>
+      <style>
+        .wordcloud {
+            width:80%;
+        }
+      </style>
+      <script>
+          $(document).ready(function() {
+                $('#wordcloud').jQCloud(words, {
+                    autoResize: true
+                 });
+          });
+      </script>
   </div>
 
 <!-- End Document
