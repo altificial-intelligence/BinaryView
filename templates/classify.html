@@ -17,18 +17,18 @@
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="../static/css/normalize.css">
-  <link rel="stylesheet" href="../static/css/skeleton.css">
-  <link rel="stylesheet" href="../static/css/custom.css">
-  <link rel="stylesheet" href="../static/bower_components/jqcloud2/dist/jqcloud.min.css">
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/skeleton.css') }}">
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/jqcloud.css') }}">
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="../static/images/favicon.png">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}">
 
     <!-- JavaScript -->
-    <script src="../static/bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="../static/bower_components/jqcloud2/dist/jqcloud.min.js"></script>
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jqcloud.js') }}"></script>
 
 </head>
 <body>
